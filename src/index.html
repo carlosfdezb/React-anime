@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="referrer" content="no-referrer"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Anime</title>
+    <link rel="icon" href="dist/Icons/icon_96x96.3907aa2d68c4fe0ace5aa694facb0b2a.png">
+</head>
+<body>
+    <div id='app'></div>
+    <noscript>
+        <h3>Esta app necesita Javascript para funcionar</h3>
+    </noscript>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registrado')
+                    })
+                    .catch(registrationError => {
+                        console.log('SW error', registrationError)
+                    })
+            })
+        }
+    </script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.1.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+
+    <script defer src="/__/firebase/8.1.2/firebase-storage.js"></script>
+
+</body>
+</html>

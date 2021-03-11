@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "name": "React Anime",
+    "builds": [
+        {
+            "use": "@now/static-build",
+            "src": "package.json"
+        }
+    ],
+    "routes": [
+        {
+            "src": "(.*).js", "dest": "/$l.js"
+        },
+        {
+            "src": "(.*).json", "dest": "/$l.json"
+        },
+        {
+            "src": "/.*", "dest": "/index.html"
+        }
+    ]
+}

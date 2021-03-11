@@ -1,0 +1,324 @@
+{
+    "categories": [
+        {
+            "genre": "Acción",
+            "value": "accion",
+            "img1": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/11/39717.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1223/96541.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/12/76049.jpg"
+        },
+            {
+            "genre": "Artes Marciales",
+            "value": "artes-marciales",
+            "img1": "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/6/20936.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/8/18502.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/6/20621.jpg"
+        },
+        {
+            "genre": "Aventuras",
+            "value": "aventura",
+            "img1": "https://cdn.myanimelist.net/images/anime/11/33657.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/9/77809.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1429/95946.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/5/18179.jpg"
+        },
+        {
+            "genre": "Carreras",
+            "value": "carreras",
+            "img1": "https://cdn.myanimelist.net/images/anime/12/28553.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/13/6801.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1710/106614.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1404/101364.jpg"
+        },
+        {
+            "genre": "Ciencia Ficción",
+            "value": "ciencia-ficcion",
+            "img1": "https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/4/5123.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1314/108941.jpg"
+        },
+        {
+            "genre": "Comedia",
+            "value": "comedia",
+            "img1": "https://cdn.myanimelist.net/images/anime/8/77831.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/10/73274.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1764/106659.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/3/75617.jpg"
+        },
+        {
+            "genre": "Demencia",
+            "value": "demencia",
+            "img1": "https://cdn.myanimelist.net/images/anime/1404/98182.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/11/79127.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/7/77356.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1718/91550.jpg"
+        },
+        {
+            "genre": "Demonios",
+            "value": "demonios",
+            "img1": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/11/81755.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1009/103187.jpg"
+        },
+        {
+            "genre": "Deportes",
+            "value": "deportes",
+            "img1": "https://cdn.myanimelist.net/images/anime/7/76014.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/45028.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/12/86890.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/6/22103.jpg"
+        },
+        {
+            "genre": "Drama",
+            "value": "drama",
+            "img1": "https://cdn.myanimelist.net/images/anime/1223/96541.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/88469.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1122/96435.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/13/24647.jpg"
+        },
+        {
+            "genre": "Ecchi",
+            "value": "ecchi",
+            "img1": "https://cdn.myanimelist.net/images/anime/3/72943.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1044/103654.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/8/75514.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/10/74231.jpg"
+        },
+        {
+            "genre": "Escolares",
+            "value": "escolares",
+            "img1": "https://cdn.myanimelist.net/images/anime/1961/91383.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/12/85221.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/10/81155.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/11/75376.jpg"
+        },
+        {
+            "genre": "Espacial",
+            "value": "espacial",
+            "img1": "https://cdn.myanimelist.net/images/anime/12/19698.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1784/106428.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/8/50463.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/5/88524.jpg"
+        },
+        {
+            "genre": "Fantasía",
+            "value": "fantasia",
+            "img1": "https://cdn.myanimelist.net/images/anime/3/85468.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/7/75570.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/6/86733.jpg"
+        },
+        {
+            "genre": "Harem",
+            "value": "harem",
+            "img1": "https://cdn.myanimelist.net/images/anime/6/51949.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/2/84797.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/8/72855.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/2/73700.jpg"
+        },
+        {
+            "genre": "Histórico",
+            "value": "historico",
+            "img1": "https://cdn.myanimelist.net/images/anime/2/73862.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1723/109872.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1763/108108.jpg"
+        },
+        {
+            "genre": "Infantil",
+            "value": "infantil",
+            "img1": "https://cdn.myanimelist.net/images/anime/12/54549.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/5/2699.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/10/11070.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/9/14095.jpg"
+        },
+        {
+            "genre": "Josei",
+            "value": "josei",
+            "img1": "https://cdn.myanimelist.net/images/anime/1590/102068.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/2/29665.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/12/79781.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/9/11986.jpg"
+        },
+        {
+            "genre": "Juegos",
+            "value": "juegos",
+            "img1": "https://cdn.myanimelist.net/images/anime/6/82898.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/5/65187.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/5/71553.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1668/91345.jpg"
+        },
+        {
+            "genre": "Magia",
+            "value": "magia",
+            "img1": "https://cdn.myanimelist.net/images/anime/2/75533.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/11/55225.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/2/73249.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/13/55039.jpg"
+        },
+        {
+            "genre": "Mecha",
+            "value": "mecha",
+            "img1": "https://cdn.myanimelist.net/images/anime/4/5123.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1314/108941.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/12/50459.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1614/90408.jpg"
+        },
+        {
+            "genre": "Militar",
+            "value": "militar",
+            "img1": "https://cdn.myanimelist.net/images/anime/8/76222.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/9/76632.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/2/75259.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/10/75815.jpg"
+        },
+        {
+            "genre": "Misterio",
+            "value": "misterio",
+            "img1": "https://cdn.myanimelist.net/images/anime/9/9453.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/5/64449.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/13/33465.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/10/77957.jpg"
+        },
+        {
+            "genre": "Música",
+            "value": "musica",
+            "img1": "https://cdn.myanimelist.net/images/anime/3/67177.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/10/76120.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/11/11636.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/3/9853.jpg"
+        },
+        {
+            "genre": "Parodia",
+            "value": "parodia",
+            "img1": "https://cdn.myanimelist.net/images/anime/12/76049.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/13/15010.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/7/76540.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/12/89603.jpg"
+        },
+        {
+            "genre": "Policia",
+            "value": "policia",
+            "img1": "https://cdn.myanimelist.net/images/anime/10/18793.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/5/43399.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/7/10240.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/7/75199.jpg"
+        },
+        {
+            "genre": "Psicológico",
+            "value": "psicologico",
+            "img1": "https://cdn.myanimelist.net/images/anime/11/79410.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/73178.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/10/6883.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1125/96929.jpg"
+        },
+        {
+            "genre": "Recuentos de la vida",
+            "value": "recuentos-de-la-vida",
+            "img1": "https://cdn.myanimelist.net/images/anime/13/22128.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/13/50521.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/4/43643.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/5/85434.jpg"
+        },
+        {
+            "genre": "Romance",
+            "value": "romance",
+            "img1": "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1804/95033.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/2/70187.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/13/75587.jpg"
+        },
+        {
+            "genre": "Samurai",
+            "value": "samurai",
+            "img1": "https://cdn.myanimelist.net/images/anime/1879/100467.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/15874.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1190/95421.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/4/47845.jpg"
+        },
+        {
+            "genre": "Seinen",
+            "value": "seinen",
+            "img1": "https://cdn.myanimelist.net/images/anime/1500/103005.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/2/82596.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1680/110451.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/7/73886.jpg"
+        },
+        {
+            "genre": "Shoujo",
+            "value": "shoujo",
+            "img1": "https://cdn.myanimelist.net/images/anime/3/37449.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/1486/106692.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1190/93472.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/6/25254.jpg"
+        },
+        {
+            "genre": "Shounen",
+            "value": "shounen",
+            "img1": "https://cdn.myanimelist.net/images/anime/10/78745.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/5/17407.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/8/65409.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/2/88336.jpg"
+        },
+        {
+            "genre": "Sobre natural",
+            "value": "sobrenatural",
+            "img1": "https://cdn.myanimelist.net/images/anime/1918/96303.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/2/73842.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/3/79156.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/5/79697.jpg"
+        },
+        {
+            "genre": "Super poderes",
+            "value": "superpoderes",
+            "img1": "https://cdn.myanimelist.net/images/anime/8/75514.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/40451.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1319/92084.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/1805/99571.jpg"
+        },
+        {
+            "genre": "Suspenso",
+            "value": "suspenso",
+            "img1": "https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/4/75509.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1929/93629.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/12/19634.jpg"
+        },
+        {
+            "genre": "Terror",
+            "value": "terror",
+            "img1": "https://cdn.myanimelist.net/images/anime/11/78311.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/9/75299.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/13/5998.jpg"
+        },
+        {
+            "genre": "Vampiros",
+            "value": "vampiros",
+            "img1": "https://cdn.myanimelist.net/images/anime/11/75274.jpg",
+            "img2": "https://cdn.myanimelist.net/images/anime/3/40409.jpg",
+            "img3": "https://cdn.myanimelist.net/images/anime/10/19956.jpg",
+            "img4": "https://cdn.myanimelist.net/images/anime/8/74042.jpg"
+        },
+        {
+            "genre": "Yaoi",
+            "value": "yaoi",
+            "img1": "https://www3.animeflv.net/uploads/animes/covers/3032.jpg",
+            "img2": "https://www3.animeflv.net/uploads/animes/covers/136.jpg",
+            "img3": "https://www3.animeflv.net/uploads/animes/covers/2904.jpg",
+            "img4": "https://www3.animeflv.net/uploads/animes/covers/2773.jpg"
+        },
+        {
+            "genre": "Yuri",
+            "value": "yuri",
+            "img1": "https://www3.animeflv.net/uploads/animes/covers/2283.jpg",
+            "img2": "https://www3.animeflv.net/uploads/animes/covers/337.jpg",
+            "img3": "https://www3.animeflv.net/uploads/animes/covers/3028.jpg",
+            "img4": "https://www3.animeflv.net/uploads/animes/covers/2866.jpg"
+        }
+    ]
+}
