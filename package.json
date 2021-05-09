@@ -1,7 +1,7 @@
 {
-  "name": "react-curso",
+  "name": "reactanime",
   "version": "1.0.0",
-  "description": "",
+  "description": "Con ReactAnime ve todo tu anime favorito donde quieras.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "postbuild": "npx ./node_modules/react-clear-cache-path/bin/cli.js ./dist/meta.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carlos Fernández",
   "license": "ISC",
   "dependencies": {
     "@please/lrud": "0.0.11",
