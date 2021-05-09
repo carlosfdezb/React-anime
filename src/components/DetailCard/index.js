@@ -22,7 +22,7 @@ export const DetailCard = ({ id }) => {
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/anime/${id}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/${id}`)
       .then((res) => res.json())
       .then((info) => {
         setInfo(info);
@@ -35,10 +35,9 @@ export const DetailCard = ({ id }) => {
     let fav = [];
     JSON.stringify(reactLocalStorage.getObject('favs')) !== '{}' ? fav = reactLocalStorage.getObject('favs') : fav = [];
     fav.push({
-      id: id || null,
+      id: `anime/${id}` || null,
       title: title || null,
       poster: poster || null,
-      rating: rating || null,
     });
     reactLocalStorage.setObject('favs', fav);
     setIsFav(!isFav);
@@ -88,19 +87,19 @@ export const DetailCard = ({ id }) => {
             <Banner img={item.banner}>
               <FavDiv>
                 {
-                  Object.entries(favs).length !== 0 && favs.find((fav) => fav.id === item.id) ? (
+                  Object.entries(favs).length !== 0 && favs.find((fav) => fav.id === `anime/${item.id}`) ? (
                     <button type='button' onClick={() => delFav(item.id)}>
                       <BsHeartFill size='14px' color='white' />
                     </button>
                   ) : (
-                    <BtnFav type='button' onClick={() => setFav(item.id, item.title, item.poster, item.rating)}>
+                    <BtnFav type='button' onClick={() => setFav(item.id, item.title, item.poster)}>
                       {'Agregar a favoritos '}
                       <BsHeart size='14px' color='white' />
                     </BtnFav>
                   )
                 }
               </FavDiv>
-              {
+              {/* {
                 item.episodes && (
                   item.episodes[0].nextEpisodeDate && (
                     <NextEpisode>
@@ -111,11 +110,11 @@ export const DetailCard = ({ id }) => {
                     </NextEpisode>
                   )
                 )
-              }
-              <Rating>
+              } */}
+              {/* <Rating>
                 <Emoji emoji='star' />
                 {item.rating}
-              </Rating>
+              </Rating> */}
 
             </Banner>
             <Body>
@@ -134,7 +133,7 @@ export const DetailCard = ({ id }) => {
             </Body>
 
             <Title>Géneros</Title>
-            <BadgeDiv>{item.genresValue.map((gen) => (<Badge>{gen}</Badge>))}</BadgeDiv>
+            <BadgeDiv>{item.genres.map((gen) => (<Badge>{gen}</Badge>))}</BadgeDiv>
 
             <Title>Sinopsis</Title>
             <Text>{item.synopsis}</Text>
@@ -149,12 +148,13 @@ export const DetailCard = ({ id }) => {
 
 export const DetailCardDesktop = ({ id }) => {
   const [info, setInfo] = useState([]);
+  const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/anime/${id}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/${id}`)
       .then((res) => res.json())
       .then((info) => {
         setInfo(info);
@@ -163,14 +163,24 @@ export const DetailCardDesktop = ({ id }) => {
 
   }, []);
 
-  const setFav = (id, title, poster, rating) => {
+  useEffect(() => {
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeEpisodes/${id}`)
+      .then((res) => res.json())
+      .then((info) => {
+        setEpisodes(info);
+      });
+
+  }, []);
+
+  console.log(episodes);
+
+  const setFav = (id, title, poster) => {
     let fav = [];
     JSON.stringify(reactLocalStorage.getObject('favs')) !== '{}' ? fav = reactLocalStorage.getObject('favs') : fav = [];
     fav.push({
-      id: id || null,
+      id: `anime/${id}` || null,
       title: title || null,
       poster: poster || null,
-      rating: rating || null,
     });
     reactLocalStorage.setObject('favs', fav);
     setIsFav(!isFav);
@@ -185,7 +195,6 @@ export const DetailCardDesktop = ({ id }) => {
   };
 
   const favs = reactLocalStorage.getObject('favs');
-  console.log(info);
   return (
 
     <HeaderBoxDesktop>
@@ -216,15 +225,13 @@ export const DetailCardDesktop = ({ id }) => {
             </Text>
 
           </div>
-        ) : info.map((item) => {
-          const colorDominant = item.banner;
-          console.log(colorDominant);
+        ) : info && info.map((item) => {
           return (
             <div>
               <Banner img={item.banner}>
 
                 {
-                  Object.entries(favs).length !== 0 && favs.find((fav) => fav.id === item.id) ? (
+                  Object.entries(favs).length !== 0 && favs.find((fav) => `anime/${item.id}` === fav.id) ? (
                     <button type='button' onClick={() => delFav(item.id)}>
                       <FavDivDesktop>
                         <SvgDiv>
@@ -233,7 +240,7 @@ export const DetailCardDesktop = ({ id }) => {
                       </FavDivDesktop>
                     </button>
                   ) : (
-                    <BtnFav type='button' onClick={() => setFav(item.id, item.title, item.poster, item.rating)}>
+                    <BtnFav type='button' onClick={() => setFav(item.id, item.title, item.poster)}>
                       <FavDivDesktop>
                         {'Agregar a favoritos '}
                         <BsHeart size='1.1vw' color='white' />
@@ -261,11 +268,6 @@ export const DetailCardDesktop = ({ id }) => {
                   </TypeDiv>
 
                 </HeaderDesktop>
-
-                <RatingDesktop>
-                  <Emoji emoji='star' />
-                  {item.rating}
-                </RatingDesktop>
               </Banner>
 
               <GradientImage img={item.banner}>
@@ -284,26 +286,21 @@ export const DetailCardDesktop = ({ id }) => {
                   <ListDiv>
                     <List>
                       {
-                        item.episodes.map((epi) => (
+                        episodes && episodes.map((epi) => (
                           <Item>
-                            {
-                              epi.episode ? (
-                                <Link to={`/watch/${item.id.replace('anime/', '')}/${epi.episode}/${item.episodes.length - 1}`} style={{ textDecoration: 'none', color: '#FFF' }}>
-                                  <EpisodeCard>
-                                    <PlayDiv>
-                                      <BsPlayFill size='24px' />
-                                    </PlayDiv>
-                                    <NumberDiv>
-                                      <h2>{epi.episode}</h2>
-                                    </NumberDiv>
-                                    <PreviewImage alt='' src={epi.imagePreview} />
-                                    <TextEpisodeCard>{`${item.title} - Episodio ${epi.episode}`}</TextEpisodeCard>
-                                  </EpisodeCard>
-                                </Link>
-                              ) : (
-                                ''
-                              )
-                            }
+
+                            <Link to={`/watch/${item.id.replace('anime/', '')}/${epi.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none', color: '#FFF' }}>
+                              <EpisodeCard>
+                                <PlayDiv>
+                                  <BsPlayFill size='24px' />
+                                </PlayDiv>
+                                <NumberDiv>
+                                  <h2>{epi.episode}</h2>
+                                </NumberDiv>
+                                <PreviewImage alt='' src={epi.poster} />
+                                <TextEpisodeCard>{`${item.title} - Episodio ${epi.episode}`}</TextEpisodeCard>
+                              </EpisodeCard>
+                            </Link>
                           </Item>
                         ))
                       }
@@ -316,7 +313,7 @@ export const DetailCardDesktop = ({ id }) => {
                     <p>{item.synopsis}</p>
                   </InfoBody>
 
-                  {
+                  {/* {
                     item.episodes && (
                       item.episodes[0].nextEpisodeDate && (
                         <>
@@ -327,11 +324,11 @@ export const DetailCardDesktop = ({ id }) => {
                         </>
                       )
                     )
-                  }
+                  } */}
 
                   <h1>Géneros</h1>
                   <InfoBody>
-                    <BadgeDiv>{item.genresValue.map((gen) => (<BadgeDesktop>{gen}</BadgeDesktop>))}</BadgeDiv>
+                    <BadgeDiv>{item.genres.map((gen) => (<BadgeDesktop>{gen}</BadgeDesktop>))}</BadgeDiv>
                   </InfoBody>
                 </InfoDiv>
               </FlexDiv>

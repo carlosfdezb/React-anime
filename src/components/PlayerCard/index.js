@@ -11,11 +11,10 @@ export const PlayerCard = ({ id, episode, last }) => {
   const [video, setVideo] = useState([]);
   const [server, setServer] = useState(0);
   const [loading, setLoading] = useState(true);
-  console.log('ESTO ES', video);
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeServers/111111/${id}-${episode}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeServers/${id}/${episode}`)
       .then((res) => res.json())
       .then((info) => {
         console.log(episode);
@@ -49,12 +48,20 @@ export const PlayerCard = ({ id, episode, last }) => {
           <List>
             {
               video !== undefined && Object.entries(video).length !== 0 ? (
-                video[server].server === 'gocdn' || video[server].server === 'mega' || video[server].server === 'okru' ? (
+                video[server][0] === 'Umi' || video[server][0] === 'Mega' || video[server][0] === 'Okru' ? (
                   <VideoDiv>
                     <Item>
-                      <Iframe id='player' sandbox='allow-same-origin allow-scripts allow-popups allow-forms' width='100%' height='350' url={video[server].code} frameBorder='0' allowFullScreen />
+                      <Iframe
+                        id='player'
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
+                        width='100%'
+                        height='350'
+                        url={video[server][1]}
+                        frameBorder='0'
+                        allowFullScreen
+                      />
                     </Item>
-                    <Serverh2>{video[server].server}</Serverh2>
+                    <Serverh2>{video[server][0]}</Serverh2>
                   </VideoDiv>
                 ) : changeServer()) : ''
             }
@@ -95,11 +102,10 @@ export const PlayerCardDesktop = ({ id, episode, last }) => {
   const [video, setVideo] = useState([]);
   const [server, setServer] = useState(0);
   const [loading, setLoading] = useState(true);
-  console.log('ESTO ES', video);
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeServers/111111/${id}-${episode}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeServers/${id}/${episode}`)
       .then((res) => res.json())
       .then((info) => {
         console.log(episode);
@@ -129,12 +135,20 @@ export const PlayerCardDesktop = ({ id, episode, last }) => {
           <List>
             {
               video !== undefined && Object.entries(video).length !== 0 ? (
-                video[server].server === 'gocdn' || video[server].server === 'mega' || video[server].server === 'okru' ? (
+                video[server][0] === 'Umi' || video[server][0] === 'Mega' || video[server][0] === 'Okru' ? (
                   <VideoDivDesktop>
                     <Item>
-                      <Iframe id='player' sandbox='allow-same-origin allow-scripts allow-popups allow-forms' width='100%' height='725px' url={video[server].code} frameBorder='0' allowFullScreen />
+                      <Iframe
+                        id='player'
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
+                        width='100%'
+                        height='725px'
+                        url={video[server][1]}
+                        frameBorder='0'
+                        allowFullScreen
+                      />
                     </Item>
-                    <Serverh2>{video[server].server}</Serverh2>
+                    <Serverh2>{video[server][0]}</Serverh2>
                   </VideoDivDesktop>
                 ) : changeServer()) : ''
             }

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { fadeIn, fadeOut } from '../../styles/animation';
 
 export const DivBox = styled.div`
-${fadeIn()}
-position: relative;
+    ${fadeIn()}
+    position: relative;
     height: 150px;
     width: 260px;
     color: black;
@@ -14,7 +14,8 @@ position: relative;
     -webkit-border-radius: 5px 5px 5px 5px;
     background-image: url(${(props) => props.cover});
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
+    background-position: center center;
     overflow-y: hidden;
     transition: .5s;
 

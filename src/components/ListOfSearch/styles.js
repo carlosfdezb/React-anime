@@ -13,6 +13,7 @@ export const List = styled.ul`
   flex-wrap: wrap;
   width: 100%;
   overflow-y: hidden;
+  align-items: right;
 `;
 
 export const Item = styled.li`

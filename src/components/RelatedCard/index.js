@@ -8,32 +8,17 @@ import { AnimeCard } from '../AnimeCard';
 
 export const RelatedCard = ({ id }) => {
   const [related, setRelated] = useState([]);
-  const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const ide = id.split('-')[0];
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/SearchRelated/${ide.replace('san', '')}`)
+    window.fetch(`${BASE_URL}/api/v1/SearchRelated/${id}`)
       .then((res) => res.json())
       .then((info) => {
-        setRelated(info);
+        setRelated(info.search);
+        setLoading(false);
       });
 
-  }, []);
-
-  useEffect(() => {
-    window.fetch(`${BASE_URL}/api/v1/animeMalId/${id}`)
-      .then((res) => res.json())
-      .then((info) => {
-        window.fetch(`${MAL_API}${info}`)
-          .then((res) => res.json())
-          .then((info) => {
-            setFilter(info.related);
-            setLoading(false);
-          });
-      });
   }, []);
 
   return (
@@ -66,39 +51,7 @@ export const RelatedCard = ({ id }) => {
         ) : (
           <List>
             {
-              filter['Alternative version'] && related.search && related.search.map((rel) => (
-                filter['Alternative version'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Versión Alternativa' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Prequel'] && related.search && related.search.map((rel) => (
-                filter['Prequel'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Precuela' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Sequel'] && related.search && related.search.map((rel) => (
-                filter['Sequel'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Secuela' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Summary'] && related.search && related.search.map((rel) => (
-                filter['Summary'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Resumen' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Parent story'] && related.search && related.search.map((rel) => (
-                filter['Parent story'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Historia Principal' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Side story'] && related.search && related.search.map((rel) => (
-                filter['Side story'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Historia Secundaria' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Other'] && related.search && related.search.map((rel) => (
-                filter['Other'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Otros' searchSize='true' /></Item>))
-              ))
+              related && related.map((rel) => <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Precuela' searchSize='true' /></Item>)
             }
           </List>
         )
@@ -110,32 +63,17 @@ export const RelatedCard = ({ id }) => {
 
 export const RelatedCardDesktop = ({ id }) => {
   const [related, setRelated] = useState([]);
-  const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const ide = id.split('-')[0];
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/SearchRelated/${ide.replace('san', '')}`)
+    window.fetch(`${BASE_URL}/api/v1/SearchRelated/${id}`)
       .then((res) => res.json())
       .then((info) => {
-        setRelated(info);
+        setRelated(info.search);
+        setLoading(false);
       });
 
-  }, []);
-
-  useEffect(() => {
-    window.fetch(`${BASE_URL}/api/v1/animeMalId/${id}`)
-      .then((res) => res.json())
-      .then((info) => {
-        window.fetch(`${MAL_API}${info}`)
-          .then((res) => res.json())
-          .then((info) => {
-            setFilter(info.related);
-            setLoading(false);
-          });
-      });
   }, []);
 
   return (
@@ -167,39 +105,7 @@ export const RelatedCardDesktop = ({ id }) => {
         ) : (
           <List>
             {
-              filter['Alternative version'] && related.search && related.search.map((rel) => (
-                filter['Alternative version'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Versión Alternativa' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Prequel'] && related.search && related.search.map((rel) => (
-                filter['Prequel'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Precuela' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Sequel'] && related.search && related.search.map((rel) => (
-                filter['Sequel'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Secuela' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Summary'] && related.search && related.search.map((rel) => (
-                filter['Summary'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Resumen' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Parent story'] && related.search && related.search.map((rel) => (
-                filter['Parent story'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Historia Principal' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Side story'] && related.search && related.search.map((rel) => (
-                filter['Side story'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Historia Secundaria' searchSize='true' /></Item>))
-              ))
-            }
-            {
-              filter['Other'] && related.search && related.search.map((rel) => (
-                filter['Other'].map((fil) => (rel.malId.malId === fil.mal_id && <Item key={rel.id}><AnimeCard {...rel} relatedTitle='Otros' searchSize='true' /></Item>))
-              ))
+              related && related.map((rel) => <Item key={rel.id}><AnimeCard {...rel} relatedTitle='' searchSize='true' /></Item>)
             }
           </List>
         )

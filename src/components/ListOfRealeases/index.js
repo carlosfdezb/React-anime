@@ -11,14 +11,12 @@ export const ListOfReleases = () => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/releases`)
-        .then((res) => res.json())
-        .then((n) => {
-          setRelease(n.releases);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/releases`)
+      .then((res) => res.json())
+      .then((n) => {
+        setRelease(n.releases);
+        setLoading(false);
+      });
   }, []);
   console.log(releases);
   return (
@@ -66,16 +64,13 @@ export const ListOfReleasesDesktop = () => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/releases`)
-        .then((res) => res.json())
-        .then((n) => {
-          setRelease(n.releases);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/releases`)
+      .then((res) => res.json())
+      .then((n) => {
+        setRelease(n.releases);
+        setLoading(false);
+      });
   }, []);
-  console.log(releases);
   return (
     <>
       {

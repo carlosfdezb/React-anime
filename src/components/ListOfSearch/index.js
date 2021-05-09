@@ -10,14 +10,12 @@ export const ListOfSearch = ({ query }) => {
 
   useEffect((query) => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/Search/${query}`)
-        .then((res) => res.json())
-        .then((categories) => {
-          setCategoriesData(categories.search);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/Search/${query}`)
+      .then((res) => res.json())
+      .then((categories) => {
+        setCategoriesData(categories.search);
+        setLoading(false);
+      });
   }, []);
 
   return (

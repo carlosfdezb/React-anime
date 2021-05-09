@@ -11,14 +11,12 @@ export const ListOfNews = () => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/animeNews`)
-        .then((res) => res.json())
-        .then((n) => {
-          setNews(n.news);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/animeNews`)
+      .then((res) => res.json())
+      .then((n) => {
+        setNews(n.news);
+        setLoading(false);
+      });
   }, []);
   return (
     <List>

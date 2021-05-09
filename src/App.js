@@ -19,6 +19,7 @@ const Detail = React.lazy(() => import('./pages/Detail'));
 
 const App = () => {
   return (
+
     <Suspense fallback={<div />}>
       <GlobalStyles />
       <Router>

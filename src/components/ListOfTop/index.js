@@ -21,39 +21,33 @@ export const ListOfTop = ({ title, emoji }) => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/TopFuture`)
-        .then((res) => res.json())
-        .then((n) => {
-          setIncoming(n.future);
-          setRender(n.future);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/TopFuture`)
+      .then((res) => res.json())
+      .then((n) => {
+        setIncoming(n.future);
+        setRender(n.future);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/TopAllTime`)
-        .then((res) => res.json())
-        .then((n) => {
-          setTop(n.top);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/TopAllTime`)
+      .then((res) => res.json())
+      .then((n) => {
+        setTop(n.top);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/TopAiring`)
-        .then((res) => res.json())
-        .then((n) => {
-          setAiring(n.airing);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/TopAiring`)
+      .then((res) => res.json())
+      .then((n) => {
+        setAiring(n.airing);
+        setLoading(false);
+      });
   }, []);
 
   const stateControlBtn1 = () => {

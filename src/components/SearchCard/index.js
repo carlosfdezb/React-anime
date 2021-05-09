@@ -5,7 +5,8 @@ import { SearchBox, SearchDiv, SearchInput } from './styles';
 import { BASE_URL } from '../../urls/url';
 import { AnimeCard } from '../AnimeCard';
 
-import { List, Item, ListDiv } from '../ListOfSearch/styles';
+import { Item, ListDiv } from '../ListOfSearch/styles';
+import { List } from '../ListOfBrowse/styles';
 import { TEXT_COLOR } from '../../styles/DarkMode';
 
 function useFetch(url) {
@@ -34,7 +35,7 @@ const SearchCard = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [data, loading] = useFetch(
-    `${BASE_URL}/api/v1/Search/${searchTerm}`,
+    `${BASE_URL}/api/v1/Search/${searchTerm.replace(/ /g, '+')}`,
   );
 
   return (

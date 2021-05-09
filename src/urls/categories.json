@@ -8,14 +8,6 @@
             "img3": "https://cdn.myanimelist.net/images/anime/1223/96541.jpg",
             "img4": "https://cdn.myanimelist.net/images/anime/12/76049.jpg"
         },
-            {
-            "genre": "Artes Marciales",
-            "value": "artes-marciales",
-            "img1": "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
-            "img2": "https://cdn.myanimelist.net/images/anime/6/20936.jpg",
-            "img3": "https://cdn.myanimelist.net/images/anime/8/18502.jpg",
-            "img4": "https://cdn.myanimelist.net/images/anime/6/20621.jpg"
-        },
         {
             "genre": "Aventuras",
             "value": "aventura",
@@ -31,14 +23,6 @@
             "img2": "https://cdn.myanimelist.net/images/anime/13/6801.jpg",
             "img3": "https://cdn.myanimelist.net/images/anime/1710/106614.jpg",
             "img4": "https://cdn.myanimelist.net/images/anime/1404/101364.jpg"
-        },
-        {
-            "genre": "Ciencia Ficción",
-            "value": "ciencia-ficcion",
-            "img1": "https://cdn.myanimelist.net/images/anime/5/73199.jpg",
-            "img2": "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
-            "img3": "https://cdn.myanimelist.net/images/anime/4/5123.jpg",
-            "img4": "https://cdn.myanimelist.net/images/anime/1314/108941.jpg"
         },
         {
             "genre": "Comedia",
@@ -215,14 +199,6 @@
             "img2": "https://cdn.myanimelist.net/images/anime/3/73178.jpg",
             "img3": "https://cdn.myanimelist.net/images/anime/10/6883.jpg",
             "img4": "https://cdn.myanimelist.net/images/anime/1125/96929.jpg"
-        },
-        {
-            "genre": "Recuentos de la vida",
-            "value": "recuentos-de-la-vida",
-            "img1": "https://cdn.myanimelist.net/images/anime/13/22128.jpg",
-            "img2": "https://cdn.myanimelist.net/images/anime/13/50521.jpg",
-            "img3": "https://cdn.myanimelist.net/images/anime/4/43643.jpg",
-            "img4": "https://cdn.myanimelist.net/images/anime/5/85434.jpg"
         },
         {
             "genre": "Romance",

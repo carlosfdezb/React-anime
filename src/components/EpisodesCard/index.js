@@ -16,7 +16,7 @@ export const EpisodesCard = ({ id }) => {
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/anime/${id}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeEpisodes/${id}`)
       .then((res) => res.json())
       .then((info) => {
         setEpisodes(info);
@@ -67,7 +67,7 @@ export const EpisodesCard = ({ id }) => {
           </List>
         ) : (
           <List>
-            {
+            {/* {
               episodes.map((episode) => (
                 episode.episodes.map((detail) => (
 
@@ -83,71 +83,70 @@ export const EpisodesCard = ({ id }) => {
                       </Item>
                     </EpisodeDiv>
                   )))))
-            }
+            } */}
             {
               sort ? (episodes.map((episode) => (
-                episode.episodes.map((detail) => (
-                  detail.episode && (
-                    reactLocalStorage.get(`${id}-${detail.episode}`) ?
+
+                episode.episode && (
+                  reactLocalStorage.get(`${id}-${episode.episode}`) ?
+                    (
+                      <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <EpisodeDiv watched='true'>
+                          <h2>
+                            Episodio
+                            {' '}
+                            {episode.episode}
+                          </h2>
+                          <EpisodeImg alt='' src={episode.poster} />
+                        </EpisodeDiv>
+                      </Link>
+                    ) :
+                    (
+                      <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <EpisodeDiv>
+
+                          <h2>
+                            Episodio
+                            {' '}
+                            {episode.episode}
+                          </h2>
+                          <EpisodeImg alt='' src={episode.poster} />
+                        </EpisodeDiv>
+                      </Link>
+                    )
+                )))) :
+
+                episodes.map((episode) => (
+
+                  episode.episode && (
+                    reactLocalStorage.get(`${id}-${episode.episode}`) ?
                       (
-                        <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
                           <EpisodeDiv watched='true'>
                             <h2>
                               Episodio
                               {' '}
-                              {detail.episode}
+                              {episode.episode}
                             </h2>
-                            <EpisodeImg alt='' src={detail.imagePreview} />
+                            <EpisodeImg alt='' src={episode.poster} />
                           </EpisodeDiv>
                         </Link>
                       ) :
                       (
-                        <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
                           <EpisodeDiv>
 
                             <h2>
                               Episodio
                               {' '}
-                              {detail.episode}
+                              {episode.episode}
                             </h2>
-                            <EpisodeImg alt='' src={detail.imagePreview} />
+                            <EpisodeImg alt='' src={episode.poster} />
                           </EpisodeDiv>
                         </Link>
                       )
-                  )))))) :
-
-                episodes.map((episode) => (
-                  episode.episodes.map((detail) => (
-
-                    detail.episode && (
-                      reactLocalStorage.get(`${id}-${detail.episode}`) ?
-                        (
-                          <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                            <EpisodeDiv watched='true'>
-                              <h2>
-                                Episodio
-                                {' '}
-                                {detail.episode}
-                              </h2>
-                              <EpisodeImg alt='' src={detail.imagePreview} />
-                            </EpisodeDiv>
-                          </Link>
-                        ) :
-                        (
-                          <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                            <EpisodeDiv>
-
-                              <h2>
-                                Episodio
-                                {' '}
-                                {detail.episode}
-                              </h2>
-                              <EpisodeImg alt='' src={detail.imagePreview} />
-                            </EpisodeDiv>
-                          </Link>
-                        )
-                    )
-                  ))).reverse())
+                  )
+                )).reverse()
             }
           </List>
         )
@@ -164,7 +163,7 @@ export const EpisodesCardDesktop = ({ id }) => {
 
   useEffect(() => {
     setLoading(true);
-    window.fetch(`${BASE_URL}/api/v1/GetAnimeInfo/anime/${id}`)
+    window.fetch(`${BASE_URL}/api/v1/GetAnimeEpisodes/${id}`)
       .then((res) => res.json())
       .then((info) => {
         setEpisodes(info);
@@ -172,6 +171,7 @@ export const EpisodesCardDesktop = ({ id }) => {
       });
 
   }, []);
+  console.log(episodes);
   return (
     <>
       <button type='button' onClick={() => setSort(!sort)}>
@@ -213,29 +213,54 @@ export const EpisodesCardDesktop = ({ id }) => {
           <ListDesktop>
             {
               episodes.map((episode) => (
-                episode.episodes.map((detail) => (
 
-                  detail.nextEpisodeDate && (
-                    <NextEpisodeDesktop>
-                      <Item>
+                episode.nextEpisodeDate && (
+                  <NextEpisodeDesktop>
+                    <Item>
 
-                        {'Próximo episodio: '}
-                        {detail.nextEpisodeDate}
-                        {' '}
-                        <Emoji emoji='tear-off-calendar' size='24' />
+                      {'Próximo episodio: '}
+                      {episode.nextEpisodeDate}
+                      {' '}
+                      <Emoji emoji='tear-off-calendar' size='24' />
 
-                      </Item>
-                    </NextEpisodeDesktop>
-                  )))))
+                    </Item>
+                  </NextEpisodeDesktop>
+                )))
             }
             {
               sort ? (episodes.map((episode) => (
-                episode.episodes.map((detail) => (
-                  detail.episode && (
-                    reactLocalStorage.get(`${id}-${detail.episode}`) ?
+                episode.episode && (
+                  reactLocalStorage.get(`${id}-${episode.episode}`) ?
+                    (
+                      <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <EpisodeDivDesktop image={episode.poster}>
+                          <DivTitleDesktop>
+                            <FaCheckCircle size='32px' />
+                          </DivTitleDesktop>
+
+                        </EpisodeDivDesktop>
+                      </Link>
+                    ) :
+                    (
+                      <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                        <EpisodeDivDesktop image={episode.poster}>
+                          <DivTitleDesktop>
+
+                            {episode.episode}
+                          </DivTitleDesktop>
+
+                        </EpisodeDivDesktop>
+                      </Link>
+                    )
+                )))) :
+
+                episodes.map((episode) => (
+
+                  episode.episode && (
+                    reactLocalStorage.get(`${id}-${episode.episode}`) ?
                       (
-                        <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                          <EpisodeDivDesktop image={detail.imagePreview}>
+                        <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                          <EpisodeDivDesktop image={episode.poster}>
                             <DivTitleDesktop>
                               <FaCheckCircle size='32px' />
                             </DivTitleDesktop>
@@ -244,46 +269,18 @@ export const EpisodesCardDesktop = ({ id }) => {
                         </Link>
                       ) :
                       (
-                        <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                          <EpisodeDivDesktop image={detail.imagePreview}>
+                        <Link to={`/watch/${id}/${episode.episode}/${episodes.length - 1}`} style={{ textDecoration: 'none' }}>
+                          <EpisodeDivDesktop image={episode.poster}>
                             <DivTitleDesktop>
 
-                              {detail.episode}
+                              {episode.episode}
                             </DivTitleDesktop>
 
                           </EpisodeDivDesktop>
                         </Link>
                       )
-                  )))))) :
-
-                episodes.map((episode) => (
-                  episode.episodes.map((detail) => (
-
-                    detail.episode && (
-                      reactLocalStorage.get(`${id}-${detail.episode}`) ?
-                        (
-                          <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                            <EpisodeDivDesktop image={detail.imagePreview}>
-                              <DivTitleDesktop>
-                                <FaCheckCircle size='32px' />
-                              </DivTitleDesktop>
-
-                            </EpisodeDivDesktop>
-                          </Link>
-                        ) :
-                        (
-                          <Link to={`/watch/${id}/${detail.episode}/${episode.episodes.length - 1}`} style={{ textDecoration: 'none' }}>
-                            <EpisodeDivDesktop image={detail.imagePreview}>
-                              <DivTitleDesktop>
-
-                                {detail.episode}
-                              </DivTitleDesktop>
-
-                            </EpisodeDivDesktop>
-                          </Link>
-                        )
-                    )
-                  ))).reverse())
+                  )
+                )).reverse()
             }
           </ListDesktop>
         )

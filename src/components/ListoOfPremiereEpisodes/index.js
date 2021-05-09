@@ -12,14 +12,12 @@ export const ListOfPremiereEpisodes = ({ title }) => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/LatestEpisodesAdded`)
-        .then((res) => res.json())
-        .then((fil1) => {
-          setCategoriesData(fil1.episodes);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/LatestEpisodesAdded`)
+      .then((res) => res.json())
+      .then((fil1) => {
+        setCategoriesData(fil1.episodes);
+        setLoading(false);
+      });
 
   }, []);
   return (

@@ -72,15 +72,12 @@ const HomePage = () => {
             <DesktopDiv>
               <ListOfPremiereEpisodes title='Últimos Capítulos' />
               <DivGradient />
-              <ListOfAnimeCards route='AnimeByState/1/title/1' title='En Emisión' />
+              <ListOfAnimeCards route='latestAnimeAdded' title='En Emisión' />
               <DivGradient />
               <ListOfTop title='Top 25' />
               <DivGradient />
               <ListOfCategories title='Categorías' />
               <DivGradient />
-              <DesktopLink to='/about'>
-                <LinkText>Acerca de</LinkText>
-              </DesktopLink>
               <MarginBottom />
 
             </DesktopDiv>
@@ -90,15 +87,12 @@ const HomePage = () => {
             <Logo />
             <ListOfPremiereEpisodes title='Últimos Capítulos' />
             <DivGradient />
-            <ListOfAnimeCards route='AnimeByState/1/title/1' title='En Emisión' />
+            <ListOfAnimeCards route='latestAnimeAdded' title='En Emisión' />
             <DivGradient />
             <ListOfTop title='Top 25' />
             <DivGradient />
             <ListOfCategories title='Categorías' />
             <DivGradient />
-            <DesktopLink to='/about'>
-              <LinkText>Acerca de</LinkText>
-            </DesktopLink>
             <MarginBottom />
             <NavBar>
               <Link to='/'><MdHome size={SIZE} /></Link>

@@ -14,14 +14,12 @@ export const ListOfAnimeCards = ({ route, title }) => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      window.fetch(`${BASE_URL}/api/v1/${route}`)
-        .then((res) => res.json())
-        .then((categories) => {
-          setCategoriesData(categories);
-          setLoading(false);
-        });
-    }, 200);
+    window.fetch(`${BASE_URL}/api/v1/${route}`)
+      .then((res) => res.json())
+      .then((categories) => {
+        setCategoriesData(categories);
+        setLoading(false);
+      });
   }, []);
 
   return (

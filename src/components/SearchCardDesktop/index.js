@@ -34,7 +34,7 @@ const SearchCardDesktop = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [data, loading] = useFetch(
-    `${BASE_URL}/api/v1/Search/${searchTerm}`,
+    `${BASE_URL}/api/v1/Search/${searchTerm.replace(/ /g, '+')}`,
   );
 
   return (
